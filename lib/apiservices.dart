@@ -7,10 +7,10 @@ class Apiservices {
 
   Future<QuoteApi> request(String option) async {
     String apiUrl;
-    if (option == '') {
-      apiUrl = 'https://api.adviceslip.com/advice';
-    } else{
+    if (option != Null) {
       apiUrl = 'https://api.adviceslip.com/advice/$option';
+    } else{
+      apiUrl = 'https://api.adviceslip.com/advice';
     }
     try {
       return await http
